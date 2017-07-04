@@ -11,8 +11,11 @@ Check all your backdoors with only one telegram messenger account !
 + Execute custom module or PHP code in selected target
 + Start a multiples integrated commands in GShark
 + Generate offuscated GShark Executor backdoor
-+ Configure proxy on master server for comunicate to all backdoors
++ Configure proxy on master server for comunicate to all backdoors (Proxy**)
++ Generate new backdoor source after interaction (AutoGenerate**)
 + More ...
+
+** Configuration with /config 
 
 #### Networking
 <img src="https://s21.postimg.org/6exrgf86f/schema.png" width="550">
